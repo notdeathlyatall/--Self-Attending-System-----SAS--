@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Self-Attending System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HOME ================= -->
+
+<section id="homePage" class="page active">
+
+    <nav class="navbar">
+        <div class="logo">SELF-ATTENDING SYSTEM</div>
+    </nav>
+
+    <main class="hero">
+
+        <div class="hero-text">
+
+            <div class="badge">
+                DIGITAL ATTENDANCE PLATFORM
+            </div>
+
+            <h1>
+                SELF-ATTENDING
+                <span>SYSTEM</span>
+            </h1>
+
+            <p class="intro">
+                The Self-Attending System is a thoughtfully developed digital
+                platform designed to modernize and simplify the daily attendance
+                process within a school environment, providing students with a
+                convenient and efficient way to record their attendance while
+                ensuring that every attendance request is properly verified and
+                securely maintained. By reducing dependence on traditional manual
+                procedures, the system helps save valuable time, minimize errors,
+                and create a more organized approach to attendance management.
+                At the same time, it provides teachers with a clear and reliable
+                platform through which attendance can be reviewed, verified,
+                updated, and monitored throughout the school day.
+            </p>
+
+            <button class="main-login-btn" onclick="openLogin()">
+                LOGIN
+                <span>→</span>
+            </button>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="big-check">
+                ✓
+            </div>
+
+            <h2>
+                Simple. Secure. Organized.
+            </h2>
+
+            <p>
+                A modern approach to managing school attendance with
+                efficiency, accuracy, and ease.
+            </p>
+
+            <div class="feature">
+                <span>✓</span>
+                Easy Attendance
+            </div>
+
+            <div class="feature">
+                <span>✓</span>
+                Teacher Verification
+            </div>
+
+            <div class="feature">
+                <span>✓</span>
+                Organized Records
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Self-Attending System
+    </footer>
+
+</section>
+
+
+<!-- ================= LOGIN ================= -->
+
+<section id="loginPage" class="page">
+
+    <div class="login-container">
+
+        <button class="back-btn" onclick="showPage('homePage')">
+            ← Back
+        </button>
+
+        <div class="login-box">
+
+            <div class="login-icon">
+                🔐
+            </div>
+
+            <h1>Welcome Back</h1>
+
+            <p>
+                Sign in to continue to the Self-Attending System.
+            </p>
+
+            <form id="loginForm">
+
+                <label>Username</label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    required
+                >
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter password"
+                >
+
+                <button class="login-submit" type="submit">
+                    LOGIN
+                </button>
+
+            </form>
+
+            <div id="loginMessage"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section id="dashboardPage" class="page">
+
+    <nav class="dashboard-nav">
+
+        <div class="logo">
+            SELF-ATTENDING SYSTEM
+        </div>
+
+        <button class="logout-btn" onclick="logout()">
+            Logout
+        </button>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <div class="welcome-section">
+
+            <div class="badge">
+                DASHBOARD
+            </div>
+
+            <h1 id="dashboardTitle">
+                Welcome
+            </h1>
+
+            <p id="dashboardSubtitle"></p>
+
+        </div>
+
+
+        <!-- ================= STUDENT DASHBOARD ================= -->
+
+        <div id="studentDashboard" class="dashboard-section">
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <h2>
+                        Mark Attendance
+                    </h2>
+
+                    <p>
+                        Submit your morning or afternoon attendance
+                        request for teacher verification.
+                    </p>
+
+                    <button onclick="openAttendanceMenu()">
+                        Mark Attendance →
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <h2>
+                        Mark Yourself as On Duty
+                    </h2>
+
+                    <p>
+                        Request on-duty status when you are marked
+                        present.
+                    </p>
+
+                    <button onclick="openOnDuty()">
+                        Mark On Duty →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= TEACHER DASHBOARD ================= -->
+
+        <div id="teacherDashboard" class="dashboard-section">
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <h2>
+                        View Attendance
+                    </h2>
+
+                    <p>
+                        View and edit the complete student attendance
+                        record.
+                    </p>
+
+                    <button onclick="viewAttendance()">
+                        View Attendance →
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <h2>
+                        Attendance Requests
+                    </h2>
+
+                    <p>
+                        Approve or reject student attendance requests.
+                    </p>
+
+                    <button onclick="viewRequests()">
+                        View Requests →
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                    <h2>
+                        Attendance Sessions
+                    </h2>
+
+                    <p>
+                        Open, close, or reopen morning and afternoon
+                        attendance.
+                    </p>
+
+                    <button onclick="manageSessions()">
+                        Manage Sessions →
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-number">
+                        04
+                    </div>
+
+                    <h2>
+                        On-Duty Students
+                    </h2>
+
+                    <p>
+                        View and manage students who are on duty.
+                    </p>
+
+                    <button onclick="viewOnDutyTeacher()">
+                        View On Duty →
+                    </button>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-number">
+                        05
+                    </div>
+
+                    <h2>
+                        Reset Attendance
+                    </h2>
+
+                    <p>
+                        Reset today's attendance records.
+                    </p>
+
+                    <button class="danger-button" onclick="resetAttendance()">
+                        Reset Attendance
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+<!-- ================= MODAL ================= -->
+
+<div id="modal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" onclick="closeModal()">
+            ×
+        </button>
+
+        <h2 id="modalTitle">
+            Information
+        </h2>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
