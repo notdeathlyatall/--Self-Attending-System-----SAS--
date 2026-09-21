@@ -1,7 +1,5 @@
 # --Self-Attending-System-----SAS--
 Developer:
-- NOTDEATHLY
-- Nothing
 - M Yogesh Pranav
 - Ashish Prem Dupadu
 - Help of a AI
